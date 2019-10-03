@@ -1,0 +1,30 @@
+<%= form_for(@user) do |form| %>
+
+	<p>
+		<%= render 'shared/error_messages', object: form.object %>
+	</p>
+
+	<p> 
+		<%= form.label :name %></br>
+		<%= form.text_field :name %>
+	</p>
+
+	<p>
+		<%= form.label :email %></br>
+		<%= form.email_field :email %>
+	</p>
+
+	<p>
+		<%= form.label :password %></br>
+		<%= form.password_field :password %>
+	</p>
+
+	<p>
+		<%= form.label :password_confirmation %></br>
+		<%= form.password_field :password_confirmation %>
+	</p>
+
+	<p>
+		<%= form.submit "Sign Up" %>
+	</p>
+<% end %>

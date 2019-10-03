@@ -1,0 +1,5 @@
+<h2>Question</h2>
+<%= @question.question %>
+<% if current_user?(@user) %>
+	  |  <%= link_to 'Delete', [question.user, question], method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>

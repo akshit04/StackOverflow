@@ -1,0 +1,15 @@
+<% if logged_in? %>
+	<h1> All Questions </h1>
+	<% if @feed_items.any? %>
+	<ul>
+		<% @feed_items.each do |feed| %>
+			<li>
+				<%= feed.question %> &nbsp &nbsp &nbsp &nbsp
+				<%= link_to 'Answer', '#' %> 
+			</li>
+		<% end %>
+	</ul>
+	<% end %>
+<% else %>
+	<h1> StackOverflow</h1>
+<% end %>
