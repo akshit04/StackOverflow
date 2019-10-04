@@ -1,6 +1,6 @@
 <h2>Questions</h2>
 <% @user.questions.each do |question| %>
- <%= question.question %>
+ <%= link_to question.question, user_question_answers_path(@user.id, question.id) %>
  	<% if current_user?(@user) %>
 	  |  <%= link_to 'Delete', [question.user, question], method: :delete, data: { confirm: 'Are you sure?' } %>
 	<% end %>

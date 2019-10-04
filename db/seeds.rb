@@ -18,3 +18,5 @@ User.create!(name: "Michael Hartl",
  	password = "foobar"
  	User.create!(name: name, email: email, password: password, password_confirmation: password)
 end
+
+#questions feed
