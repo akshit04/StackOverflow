@@ -9,20 +9,22 @@ class QuestionsController < ApplicationController
 	end
 
 	def create
+		@user = User.find(params[:user_id])
 		@question = current_user.questions.create(question_params)
-		redirect_to @user
+		render 'questions/index'
 	end
 
 	def destroy
 		@user = User.find(params[:user_id])
 		@question = @user.questions.find(params[:id])
 		@question.destroy
+		render 'questions/index'
 	end
 
 	private
 
 	def question_params
-		params.require(:question).permit(:question, :body)
+		params.require(:question).permit(:question)
 	end
 
 end

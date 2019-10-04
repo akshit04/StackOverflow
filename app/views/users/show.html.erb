@@ -1,11 +1,12 @@
 <p>
   <h1>User:</h1>
-  <%= @user.name %>
+  <%= link_to @user.name, user_questions_path(@user.id) %>
 </p>
  
- 
-<h2>Add a question:</h2>
-<%= render 'questions/form' %>
+<% if current_user?(@user) %>
+	<h2>Add a question:</h2>
+	<%= render 'questions/form' %>
+<% end %>
  
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
