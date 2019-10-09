@@ -12,9 +12,14 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
 
   resources :users do
-  	resources :questions do
+    member do
+      get :following, :followers
+    end
+    resources :questions do
       resources :answers
     end
   end
+
+  resources :relationships, only: [:create, :destroy]
   
 end

@@ -1,0 +1,9 @@
+<% provide(:title, @title) %>
+<h1><%= link_to @user.name, @user %></h1>
+<%= render 'shared/stats' %>
+<h3><%= @title %></h3>
+<% if @users.any? %>
+  <ul>
+    <%= render 'show' %>
+  </ul>
+<% end %>

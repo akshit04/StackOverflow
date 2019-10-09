@@ -1,21 +1,18 @@
 <% if logged_in? %>
 	<h1> All Questions </h1>
-	<% if @feed_items.any? %>
-		<% @feed_items.each do |feed| %>
-			<% @user = User.find(feed.user_id) %>
-			<ol>
-				<li><%= @user.name %></li>
+	<% @users.each do |user| %>
+		<% if @feed_items.any? %>
+			<ul>
 				<% @feed_items.each do |feeds| %>
-					<ul>
-						<% if feeds.user_id == @user.id %>
-							<li>
-								<%= link_to feeds.question, user_question_answers_path(feeds.user_id, feeds.id) %> &nbsp &nbsp &nbsp &nbsp
-								<%= link_to 'Answer', new_user_question_answer_path(feeds.user_id, feeds.id) %>
-							</li>
-						<% end %>
-					</ul>
+					<% if feeds.user_id == user.id %>
+						<li>
+							<%= user.name %> &nbsp &nbsp
+							<%= link_to feeds.question, user_question_answers_path(feeds.user_id, feeds.id) %> &nbsp &nbsp &nbsp &nbsp
+							<%= link_to 'Answer', new_user_question_answer_path(feeds.user_id, feeds.id) %>
+						</li>
+					<% end %>
 				<% end %>
-			</ol>
+			</ul>
 		<% end %>
 	<% end %>
 <% else %>

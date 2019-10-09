@@ -1,6 +1,13 @@
 <p>
   <h1>User:</h1>
-  <%= link_to @user.name, user_questions_path(@user.id) %>
+  <h2><%= link_to @user.name, user_questions_path(@user.id) %></h2>
+</p>
+<p>
+	<%= render 'shared/stats' %>
+</p>
+
+<p>
+	<%= render 'follow_form' if logged_in? %>
 </p>
  
 <% if current_user?(@user) %>
