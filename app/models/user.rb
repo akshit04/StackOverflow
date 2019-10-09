@@ -1,17 +1,17 @@
 class User < ApplicationRecord
 
 	before_save { self.email = email.downcase }
-	validates :name, presence: true, length: {maximum: 50}
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-	validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: {case_sensitive: false}
+
 	has_secure_password
+
+	validates :name, presence: true, length: {maximum: 50}
+	validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: {case_sensitive: false}
 	validates :password, presence: true, length: { minimum: 6 }, allow_blank: true  # don't worry about new user not adding pswds., it will be handeled by has_secure_password
+
 	has_many :questions, dependent: :destroy
-
-
 	has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
 	has_many :following, through: :active_relationships, source: :followed
-
 	has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
 	has_many :followers, through: :passive_relationships, source: :follower
 
@@ -41,7 +41,16 @@ class User < ApplicationRecord
 	end
 
 	def feed
-		Question.all
+		following_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
+		Question.where("user_id IN (#{following_ids}) OR user_id = :user_id", user_id: id)   
+		# pg. 667 start reading
+
+		# EQUIVALENT SQL
+		# SELECT * FROM questions WHERE user_id IN 
+		# (SELECT followed_id FROM relationships WHERE  follower_id = 1) OR user_id = 1
+
+
+		# Question.where("user_id = ?", id)   # return all questions for a user
 	end
 
 	def follow(other_user)

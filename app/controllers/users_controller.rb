@@ -18,6 +18,12 @@ class UsersController < ApplicationController
   	else
   		render 'new'
   	end
+
+
+
+    # @user = User.create!(user_params)
+    # log_in @user
+    # redirect_to @user
   end
 
 	def show
@@ -28,14 +34,14 @@ class UsersController < ApplicationController
   def following
     @title = "Following"
     @user = User.find(params[:id])
-    @users = @user.following
+    @users = @user.following.paginate(page: params[:page])
     render 'show_follow'
   end
 
   def followers
     @title = "Followers" 
     @user = User.find(params[:id])
-    @users = @user.followers
+    @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
 

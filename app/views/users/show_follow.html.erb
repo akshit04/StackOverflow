@@ -3,7 +3,8 @@
 <%= render 'shared/stats' %>
 <h3><%= @title %></h3>
 <% if @users.any? %>
-  <ul>
-    <%= render 'show' %>
+  <ul class="users follow">
+    <%= render @users %>
   </ul>
+  <%= will_paginate %>
 <% end %>
