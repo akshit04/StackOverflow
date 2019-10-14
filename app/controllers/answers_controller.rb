@@ -1,4 +1,7 @@
 class AnswersController < ApplicationController
+
+	before_action :logged_in_user
+
 	def new
 		@user = User.find(params[:user_id])
 		@question = Question.find(params[:question_id])
@@ -6,13 +9,15 @@ class AnswersController < ApplicationController
 	end
 
 	def create
+
+		##### w/o Services #####
 		# @question = Question.find_by(id: params[:question_id])
 		# @answer = @question.answers.create(answer_params)
 		# render 'answers/index'
 
+		##### w/ Services #####
 		@question = Question.find_by(id: params[:question_id])
 		answer = AnswerModule::AnswerManager.create(answer_params, @question)
-		# debugger
 		render 'answers/index'
 	end
 

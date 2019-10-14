@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
 
-	before_action :logged_in? 
+	before_action :logged_in_user
 
 	def index
 		@user = User.find(params[:user_id])
@@ -21,7 +21,6 @@ class QuestionsController < ApplicationController
 		##### w/ Services #####
 		@user = User.find(params[:user_id])
 		question = QuestionModule::QuestionManager.create(question_params, current_user)
-		# debugger
 		render 'questions/index'
 
 	end
