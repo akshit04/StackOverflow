@@ -11,19 +11,21 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.new(user_params)
-  	if @user.save
-  		log_in @user
-  		redirect_to @user
-  	else
-  		render 'new'
-  	end
+
+    ##### w/o Servives #####
+  	# @user = User.new(user_params)
+  	# if @user.save
+  	# 	log_in @user
+  	# 	redirect_to @user
+  	# else
+  	# 	render 'new'
+  	# end
 
 
-
-    # @user = User.create!(user_params)
-    # log_in @user
-    # redirect_to @user
+    ##### w/ Services #####
+    user = UserModule::UserManager.create!(user_params)
+    log_in user
+    redirect_to user
   end
 
 	def show

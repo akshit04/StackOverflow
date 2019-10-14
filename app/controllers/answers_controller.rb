@@ -6,8 +6,13 @@ class AnswersController < ApplicationController
 	end
 
 	def create
+		# @question = Question.find_by(id: params[:question_id])
+		# @answer = @question.answers.create(answer_params)
+		# render 'answers/index'
+
 		@question = Question.find_by(id: params[:question_id])
-		@answer = @question.answers.create(answer_params)
+		answer = AnswerModule::AnswerManager.create(answer_params, @question)
+		# debugger
 		render 'answers/index'
 	end
 

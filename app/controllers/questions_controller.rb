@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
 
+	before_action :logged_in? 
+
 	def index
 		@user = User.find(params[:user_id])
 	end
@@ -9,9 +11,19 @@ class QuestionsController < ApplicationController
 	end
 
 	def create
+
+		##### w/o Services #####
+		# @user = User.find(params[:user_id])
+		# @question = current_user.questions.create(question_params)
+		# render 'questions/index'
+
+
+		##### w/ Services #####
 		@user = User.find(params[:user_id])
-		@question = current_user.questions.create(question_params)
+		question = QuestionModule::QuestionManager.create(question_params, current_user)
+		# debugger
 		render 'questions/index'
+
 	end
 
 	def destroy
