@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
 
 		##### w/ Services #####
 		@user = User.find(params[:user_id])
-		question = QuestionModule::QuestionManager.create(question_params, current_user)
+		question = question_manager.create(question_params, current_user)
 		render 'questions/index'
 
 	end
@@ -33,6 +33,14 @@ class QuestionsController < ApplicationController
 	end
 
 	private
+
+	def question_manager
+		@question_manager ||= QuestionModule::QuestionManager
+	end
+
+	# def question
+	# 	@question ||= Question.find(params[:id])
+	# end
 
 	def question_params
 		params.require(:question).permit(:question)
