@@ -17,7 +17,7 @@ class AnswersController < ApplicationController
 
 		##### w/ Services #####
 		@question = Question.find_by(id: params[:question_id])
-		answer = AnswerModule::AnswerManager.create(answer_params, @question)
+		answer = answer_manager.create(answer_params, @question)
 		render 'answers/index'
 	end
 
@@ -26,6 +26,14 @@ class AnswersController < ApplicationController
 	end
 
 	private
+
+	def answer_manager
+		@answer_manager ||= AnswerModule::AnswerManager
+	end
+
+	# def answer
+	# 	@answer ||= Answer.find(params[:id])
+	# end
 
 	def answer_params
 		params.require(:answer).permit(:answer)

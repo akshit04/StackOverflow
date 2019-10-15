@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
 
     ##### w/ Services #####
-    user = UserModule::UserManager.create!(user_params)
+    user = user_manager.create!(user_params)
     log_in user
     redirect_to user
   end
@@ -48,6 +48,11 @@ class UsersController < ApplicationController
   end
 
 	private
+
+  def user_manager
+    @user_manager ||= UserModule::UserManager
+  end
+
 
 	def user_params
 		params.require(:user).permit(:name, :email, :password, :password_confirmation)

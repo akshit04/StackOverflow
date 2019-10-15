@@ -14,7 +14,7 @@ class RelationshipsController < ApplicationController
 
 
 		##### w/ Services #####
-		RelationshipModule::RelationshipManager.create(current_user, user)
+		relationship_manager.create(current_user, user)
 	end
 
 	def destroy
@@ -29,6 +29,16 @@ class RelationshipsController < ApplicationController
 
 
 		##### w/ Services #####
-		RelationshipModule::RelationshipManager.destroy(current_user, user)
+		relationship_manager.destroy(current_user, user)
 	end
+
+	private
+
+	def relationship_manager
+		@relationship_manager ||=  RelationshipModule::RelationshipManager
+	end
+
+	# def relationship
+	# 	@relationship ||= Relationship.find(params[:id])
+	# end
 end
