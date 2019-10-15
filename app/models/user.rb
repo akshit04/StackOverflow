@@ -10,6 +10,8 @@ class User < ApplicationRecord
 	validates :password, presence: true, length: { minimum: 6 }, allow_blank: true  # don't worry about new user not adding pswds., it will be handeled by has_secure_password
 
 	has_many :questions, dependent: :destroy
+	has_many :answers, through: :questions, dependent: :destroy
+	
 	has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
 	has_many :following, through: :active_relationships, source: :followed
 	has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
