@@ -1,0 +1,104 @@
+Number of Producers: 5
+Number of Consumers: 5
+Buffer size: 5
+
+Producer 2: Insert Item 1804289383 at index 0 || Fri Feb 25 10:53:33 2022
+
+Producer 3: Insert Item 846930886 at index 1 || Fri Feb 25 10:53:33 2022
+
+Consumer 1: Remove Item 1804289383 from 0 || Fri Feb 25 10:53:33 2022
+
+Producer 5: Insert Item 1714636915 at index 2 || Fri Feb 25 10:53:34 2022
+
+Consumer 2: Remove Item 846930886 from 1 || Fri Feb 25 10:53:34 2022
+
+Producer 3: Insert Item 596516649 at index 3 || Fri Feb 25 10:53:34 2022
+
+Producer 4: Insert Item 1681692777 at index 4 || Fri Feb 25 10:53:34 2022
+
+Producer 2: Insert Item 719885386 at index 0 || Fri Feb 25 10:53:34 2022
+
+Consumer 1: Remove Item 1714636915 from 2 || Fri Feb 25 10:53:34 2022
+
+Producer 5: Insert Item 1350490027 at index 1 || Fri Feb 25 10:53:34 2022
+
+Consumer 2: Remove Item 596516649 from 3 || Fri Feb 25 10:53:34 2022
+
+Producer 3: Insert Item 2044897763 at index 2 || Fri Feb 25 10:53:34 2022
+
+Consumer 1: Remove Item 1681692777 from 4 || Fri Feb 25 10:53:35 2022
+
+Producer 4: Insert Item 1365180540 at index 3 || Fri Feb 25 10:53:35 2022
+
+Consumer 2: Remove Item 719885386 from 0 || Fri Feb 25 10:53:35 2022
+
+Producer 2: Insert Item 304089172 at index 4 || Fri Feb 25 10:53:35 2022
+
+Consumer 1: Remove Item 1350490027 from 1 || Fri Feb 25 10:53:36 2022
+
+Producer 5: Insert Item 521595368 at index 0 || Fri Feb 25 10:53:36 2022
+
+Consumer 2: Remove Item 2044897763 from 2 || Fri Feb 25 10:53:36 2022
+
+Producer 3: Insert Item 336465782 at index 1 || Fri Feb 25 10:53:36 2022
+
+Consumer 1: Remove Item 1365180540 from 3 || Fri Feb 25 10:53:36 2022
+
+Consumer 3: Remove Item 304089172 from 4 || Fri Feb 25 10:53:36 2022
+
+Consumer 4: Remove Item 521595368 from 0 || Fri Feb 25 10:53:36 2022
+
+Consumer 5: Remove Item 336465782 from 1 || Fri Feb 25 10:53:36 2022
+
+Producer 1: Insert Item 424238335 at index 2 || Fri Feb 25 10:53:37 2022
+
+Producer 4: Insert Item 233665123 at index 3 || Fri Feb 25 10:53:37 2022
+
+Producer 2: Insert Item 1101513929 at index 4 || Fri Feb 25 10:53:37 2022
+
+Producer 5: Insert Item 635723058 at index 0 || Fri Feb 25 10:53:37 2022
+
+Producer 3: Insert Item 1059961393 at index 1 || Fri Feb 25 10:53:37 2022
+
+Consumer 2: Remove Item 424238335 from 2 || Fri Feb 25 10:53:38 2022
+
+Consumer 3: Remove Item 233665123 from 3 || Fri Feb 25 10:53:38 2022
+
+Consumer 3: Remove Item 1101513929 from 4 || Fri Feb 25 10:53:38 2022
+
+Consumer 5: Remove Item 635723058 from 0 || Fri Feb 25 10:53:38 2022
+
+Producer 1: Insert Item 859484421 at index 2 || Fri Feb 25 10:53:38 2022
+
+Producer 4: Insert Item 608413784 at index 3 || Fri Feb 25 10:53:38 2022
+
+Consumer 4: Remove Item 1059961393 from 1 || Fri Feb 25 10:53:39 2022
+
+Producer 1: Insert Item 749241873 at index 4 || Fri Feb 25 10:53:39 2022
+
+Producer 5: Insert Item 149798315 at index 0 || Fri Feb 25 10:53:39 2022
+
+Consumer 3: Remove Item 859484421 from 2 || Fri Feb 25 10:53:39 2022
+
+Consumer 3: Remove Item 608413784 from 3 || Fri Feb 25 10:53:39 2022
+
+Producer 1: Insert Item 511702305 at index 1 || Fri Feb 25 10:53:39 2022
+
+Consumer 4: Remove Item 749241873 from 4 || Fri Feb 25 10:53:39 2022
+
+Consumer 4: Remove Item 149798315 from 0 || Fri Feb 25 10:53:39 2022
+
+Consumer 5: Remove Item 511702305 from 1 || Fri Feb 25 10:53:39 2022
+
+Producer 2: Insert Item 1734575198 at index 2 || Fri Feb 25 10:53:40 2022
+
+Consumer 4: Remove Item 1734575198 from 2 || Fri Feb 25 10:53:40 2022
+
+Producer 4: Insert Item 42999170 at index 3 || Fri Feb 25 10:53:40 2022
+
+Producer 1: Insert Item 1159126505 at index 4 || Fri Feb 25 10:53:40 2022
+
+Consumer 5: Remove Item 42999170 from 3 || Fri Feb 25 10:53:40 2022
+
+Consumer 5: Remove Item 1159126505 from 4 || Fri Feb 25 10:53:41 2022
+
