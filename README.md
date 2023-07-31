@@ -21,7 +21,7 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* Test PR
+* Test PR - alpha
 
 * Test PR 2
 
